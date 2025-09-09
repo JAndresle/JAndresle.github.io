@@ -2,918 +2,481 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jose Andres Espinoza - Data Engineer</title>
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/space_rocket-2.svg" type="image/x-icon">
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/space_rocket-2.svg" type="image/x-icon" />
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- custom css -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  /* Minimal, design-safe tweaks */
+  /* Keep original theme; only adjust clouds size & link styling */
+  .clients-list.clouds-compact .clients-item img{height:64px; width:auto;}
+  .timeline-text a{color:inherit; text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
+  .timeline-text.xp-heading{margin-top:12px; font-weight:600}
+  .timeline-text.subpoint{margin:4px 0 4px 1rem}
+</style>
 </head>
 
 <body>
-
-  <!--
-    - #MAIN
-  -->
-
   <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
+    <!-- SIDEBAR -->
+    <aside class="sidebar active" data-sidebar>
       <div class="sidebar-info">
-
         <figure class="avatar-box">
-          <img src="./assets/images/WhatsApp Image 2025-06-26 at 11.10.25 AM.jpeg" alt="Richard hanrick" width="80">
+          <img src="./assets/images/WhatsApp Image 2025-06-26 at 11.10.25 AM.jpeg" alt="Jose Espinoza" width="80" />
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Jose Espinoza</h1>
-
+          <h1 class="name" title="Jose Espinoza">Jose Espinoza</h1>
           <p class="title">Data Engineer</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
-
           <ion-icon name="chevron-down"></ion-icon>
         </button>
-
       </div>
 
       <div class="sidebar-info_more">
-
         <div class="separator"></div>
 
         <ul class="contacts-list">
-
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Email</p>
-
               <a href="mailto:me@andresle.com" class="contact-link">me@andresle.com</a>
             </div>
-
           </li>
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="phone-portrait-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Phone</p>
-
-              <a href="" class="contact-link">+506 8474-4993</a>
+              <a href="tel:+50684744993" class="contact-link">+506 8474-4993</a>
             </div>
-
           </li>
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="location-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Location</p>
-
               <address>Alajuela, Costa Rica</address>
             </div>
-
           </li>
 
-          
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="logo-linkedin"></ion-icon>
             </div>
-
             <div class="contact-info">
-              <a href="https://www.linkedin.com/in/andresle/" class="contact-link">LinkedIn</a>
-
+              <a href="https://www.linkedin.com/in/andresle/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
             </div>
-
           </li>
-
         </ul>
-
-      
 
         <div class="separator"></div>
-
       </div>
-
     </aside>
 
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
+    <!-- MAIN CONTENT -->
     <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
+      <!-- NAVBAR -->
       <nav class="navbar">
-
         <ul class="navbar-list">
-
           <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
+            <button class="navbar-link active" data-nav-link data-target="about">About</button>
           </li>
-
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link data-target="resume">Resume</button>
           </li>
-
-          
-            <button class="navbar-link" data-nav-link>Certifications</button>
-          </li>
-
-          
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link data-target="certifications">Certifications</button>
           </li>
-
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-target="portfolio">Portfolio</button>
+          </li>
         </ul>
-        
-
       </nav>
 
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
+      <!-- ABOUT -->
+      <article class="about active" data-page="about">
         <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
-       
+
         <section class="about-text">
-          <H4>
-            Hey! I'm Jose Andres 🚀<br> <br>
-          </H4>
+          <h4>Hey! I'm Jose Andres 🚀</h4>
           <p>B.S in Computer Science. I’ve worked in Data Engineering building pipelines and data models that turn complex raw data into insights and business value.</p>
-          <p>At Arkose Labs I own the Customer Success data warehouse and the ETL workflows that keep it up to date. I work closely with Customer Success and Professional Services to fuel QBRs, renewal forecasts and threat intelligence dashboards. I wrote the backend logic for our health score model that surfaces early churn risks, bringing together data from Salesforce, Gainsight, Zendesk and Pylon. I also build Python integrations with Slack that push real time alerts to stakeholders, keeping everyone on top. These solutions protect revenue and demostrated the product value.</p>
-          <p>I’m an enthusiastic Databricks user who believes generative AI will reshape analytics, so in my free time I dive into LLMs, broader generative-AI topics and how these technologies work. I am also pursuing a master’s degree in data, with a final project on adopting Lakehouse architectures.</p>        
-          </section>
+          <p>I believe that strong teamwork and open communication lead to the best solutions. I enjoy collaborating across teams, sharing knowledge and supporting others in their growth. Seeing the impact of good collaboration is something I truly value.</p>
+          <p>I’m an enthusiastic Databricks user who believes generative AI will reshape analytics. In my free time I dive into LLMs and how these technologies work.</p>
+        </section>
 
-
-        <!--
-          - service
-        -->
-
+        <!-- Areas of interest -->
         <section class="service">
-
           <h3 class="h3 service-title">My areas of interest</h3>
-
           <ul class="service-list">
-
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/data-trends-svgrepo-com.svg
-                " alt="design icon" width="40">
+                <img src="./assets/images/data-trends-svgrepo-com.svg" alt="Data Engineering" width="40" />
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Enginnering</h4>
-
-                <p class="service-item-text">
-                  Moving large amounts of data smoothly while keeping it accurate. I enjoy solving problems that make data more accessible and reliable.
-                </p>
-            </li>
-
-            
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/ai-platform-svgrepo-com.svg" alt="camera icon" width="40">
+                <h4 class="h4 service-item-title">Data Engineering</h4>
+                <p class="service-item-text">Pipelines and models that make data reliable and ready to use.</p>
               </div>
-
+            </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/ai-platform-svgrepo-com.svg" alt="Generative AI" width="40" />
+              </div>
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Generative AI</h4>
-
-                <p class="service-item-text">
-                  Exploring how large language models and other Gen AI tools can automate workflows, rush new products and unlock fresh business value.            
-                </p>
-                </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/cloud-backup-svgrepo-com.svg" alt="mobile app icon" width="40">
+                <p class="service-item-text">Exploring LLMs to automate tasks and create new value.</p>
               </div>
-
+            </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/cloud-backup-svgrepo-com.svg" alt="Cloud" width="40" />
+              </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Cloud Technologies</h4>
-
-                <p class="service-item-text">
-                  The ability to handle data at scale without hardware limitations. I like exploring how businesses use the cloud to stay agile and scalable.
-                </p>
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/page-analysis-svgrepo-com.svg" alt="Web development icon" width="40">
+                <h4 class="h4 service-item-title">Cloud</h4>
+                <p class="service-item-text">Scalable platforms to store and process data efficiently.</p>
               </div>
-
+            </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/page-analysis-svgrepo-com.svg" alt="Analytics" width="40" />
+              </div>
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Analytics</h4>
-
-                <p class="service-item-text">
-                  Turning raw numbers into clear and actionable insights that guide smarter decisions.
-                </p>
+                <p class="service-item-text">From raw numbers to simple, useful insights.</p>
               </div>
-
             </li>
-
           </ul>
-
         </section>
 
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title> </h4>
-
-              <time datetime="2021-06-14"></time>
-
-              <div data-modal-text>
-                <p>
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
+        <!-- Clouds logos -->
+        <section>
           <h3 class="h3 clients-title">Clouds</h3>
-
-          <p class="service-item-text">
-            Currently working on improving my cloud skills 💪</p>
-
-          <ul class="clients-list has-scrollbar">
-
+          <p class="service-item-text">Currently working on improving my cloud skills 💪</p>
+          <ul class="clients-list has-scrollbar clouds-compact">
             <li class="clients-item">
-              <a href="https://learn.microsoft.com/en-us/azure/?product=popular">
-                <img src="./assets/images/Azure.png" alt="client logo">
+              <a href="https://learn.microsoft.com/en-us/azure/?product=popular" target="_blank" rel="noopener">
+                <img src="./assets/images/Azure.png" alt="Azure" height="56" />
               </a>
             </li>
-
             <li class="clients-item">
-              <a href=#>
-                <img src="./assets/images/AWS.png" alt="">
+              <a href="https://docs.aws.amazon.com/" target="_blank" rel="noopener">
+                <img src="./assets/images/AWS.png" alt="AWS" height="56" />
               </a>
             </li>
-
-          <!--
-            <li class="clients-item">
-              <a href="https://docs.aws.amazon.com/">
-                <img src="./assets/images/AWS.png" alt="client logo">
-              </a>
-            </li>
-
-          -->
-
-            <li class="clients-item">
-              <a href=#>
-                <img src="" alt="">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href=#>
-                <img src="" alt="">
-              </a>
-            </li>
-
           </ul>
-
         </section>
-
       </article>
 
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
+      <!-- RESUME -->
       <article class="resume" data-page="resume">
-
         <header>
           <h2 class="h2 article-title">Resume</h2>
         </header>
 
+        <!-- Education -->
         <section class="timeline">
-
           <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
+            <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
             <h3 class="h3">Education</h3>
           </div>
-
           <ol class="timeline-list">
-
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">Universidad Cenfotec</h4>
               <span>2024 — 2025</span>
-
-              <p class="timeline-text">
-                Master's Degree in Databases and Analytics
-              </p>
+              <p class="timeline-text">Master's Degree in Databases and Analytics</p>
               <p style="color:bisque">In Progress</p>
-              <p class="timeline-text">
-                Balancing work, a Master's Degree and personal life has been a challenge, some days I win, some days I just try again tomorrow.
-              </p>
+              <p class="timeline-text">Balancing work, a Master's Degree and personal life has been a challenge, some days I win, some days I just try again tomorrow.</p>
             </li>
-
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">Unversidad Fidélitas</h4>
-
               <span>2018 — 2023</span>
-
-              <p class="timeline-text">
-               Bachelor's Degree in Systems Computer Enginnering/Computer Science.
-              </p>
-              <a href="https://drive.google.com/file/d/1BfqVWNQz6bS08zc-N7SN0Y59JwcAJKpS/view?usp=sharing" style="color:bisque">Click here to see the Degree!</a>
-            
-
+              <p class="timeline-text">Bachelor's Degree in Systems Computer Enginnering/Computer Science.</p>
+              <a href="https://drive.google.com/file/d/1BfqVWNQz6bS08zc-N7SN0Y59JwcAJKpS/view?usp=sharing" style="color:bisque" target="_blank" rel="noopener">Click here to see the Degree!</a>
             </li>
-
-
-    
           </ol>
-
         </section>
 
-
-        
+        <!-- Experience -->
         <section class="timeline">
-
           <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
+            <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
             <h3 class="h3">Experience</h3>
           </div>
-
           <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Associate Data Enginner at Arkose Labs</h4>
-
-              <p class="timeline-text">
-                In this role as a Data Engineer I collaborate with CS teams to optimize the CS data platform. I translate requirements into data models, build ETL pipelines, manage API integrations and develop automated reporting solutions that deliver insights to stakeholders and support churn-prevention initiatives.
-              </p>
-
-              <span>January 2025 — Present</span>
-
-              <br>
-              
-              <p class="timeline-text">
-                •  Maintained and owned the Customer Success Data Warehouse, which served as the primary data source for customer-facing reports (QBRs and custom dashboards demonstrating product value).
-              </p>
-              <p class="timeline-text">
-                •  Implemented, developed and monitored batch ETL pipelines that processed data from multiple sources, applied business logic to clean it and loaded it into the Data Warehouse ensuring reliable information.
-              
-              <p class="timeline-text">
-                •  Managed and extended API integrations with Salesforce, Gainsight, Harvest and Zendesk, constantly adding new objects as reporting requirements evolved and also built connectors for third-party tools APIs like Pylon.
-              </p>
-              <p class="timeline-text">
-                •  Participated from requirements gathering and data modeling through implementation on key CS looker dashboards, including: Metrics/SLAs dashboard, Renewals dashboard, Hours tracking and billing dashboard and a Threat-intelligence dashboard (which became the data foundation for a fully marketing campaign)
-              </p>
-              <p class="timeline-text">• Led data efforts on 2 customer churn-prevention projects:
-              </p>
-              </p>
-              <p class="timeline-text">
-                      - Account HealthScore: Analyzed metrics from onboarding progress, product adoption, product performance and retention to calculate a health score and identify any possible churn risk.
-                      <br>- Customer Quadrant Classification: Built the data logic for a quadrant-based model using the health scores to segment customers, optimizing account management, resource allocation and streamlining the customer journey.
-              </p>
-              <p class="timeline-text">
-                •  Developed Python scripts that queried the Data Warehouse with business logic and sent personalized alerts to specific Slack channels, keeping CS on top of high-risk accounts and also providing weekly/monthly summaries.
-              </p>
-              <p class="timeline-text">
-                •  Participated in hiring and onboarding a new Data Engineer: designed the onboarding plan, mentored daily and ensured full ramp-up within two months.
-              </p>
+            <li class="timeline-item xp-item">
+              <h4 class="h4 timeline-item-title">Associate Data Engineer</h4>
+              <p class="timeline-text">Arkose Labs<br>Escazú, Costa Rica<br>01/2025 - Present</p>
+              <p class="timeline-text">As a Data Engineer in the Customer Success team, I turn raw data into clean datasets that power an automated BI reporting platform in Looker Studio that CS teams use to present value to more than +70 customers and that executives use to monitor portfolio health and renewals. I drive cross-team technical alignment with Professional Services, Account Management and Solutions Engineering to maintain a single source of truth across reporting use cases, shared definitions and KPI calculations. I lead the data engineering work to evaluate and prioritize requests, define scope and turn the most valuable ones into production datasets that support business value.</p>
+              <p class="timeline-text xp-heading">Key achievements</p>
+              <p class="timeline-text bullet">• Owned and maintained the pipelines and data warehouse (Postgres) that power the Customer Success automated BI reporting platform; improved freshness to twice-daily runs (from once daily) by optimizing queries and schedules. Reduced manual prep time:</p>
+              <p class="timeline-text subpoint">QBRs: from 2 hours to 10 minutes per customer.</p>
+              <p class="timeline-text subpoint">Monthly reports: from 1 hour to 5 minutes per customer.</p>
+              <p class="timeline-text subpoint">Post-attack reports: from 2 hours to 10 minutes per incident.</p>
+              <p class="timeline-text subpoint">Threat-Intel reports data source: from 6 hours getting exports of data from different sources to 30min getting the data centralized from the BI reporting platform; latest example of the last quarter's report: <a href="https://www.arkoselabs.com/resource/threat-actor-report-scammer-focus" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Threat Actor Report – Scammer Focus</a>.</p>
+              <p class="timeline-text bullet">• Led end-to-end data engineering workflow for two CS churn-prevention initiatives): from source systems discovery and API integrations, transforming raw (bronze) to -> clean datasets (silver)-> and loading into postgres tables (gold).</p>
+              <p class="timeline-text subpoint">Account Health Score: blends onboarding, adoption, performance, and retention to flag risk up to 6 months earlier.</p>
+              <p class="timeline-text subpoint">Customer Quadrant Classification: segments by health × value to focus actions and target ≥5 expansion opps/quarter.</p>
+              <p class="timeline-text bullet">• Planned, scoped and executed the migration of Python ETL code from ECS Fargate/ECR to Airflow (Amazon MWAA) to achieve more reliable runs, better isolation of data processing, stronger QA checks and less manual work. I designed a phased migration plan with a pipeline inventory and dependencies. In Airflow, DAG pipelines run under one scheduler with clear retries and simple monitoring; heavy jobs were split into smaller tasks to isolate failures. 5 pipelines migrated successfully; 2 remain to finish in Q3.</p>
+              <p class="timeline-text bullet">• Built a Slack alerting system in Python that queries Gold tables (PostgreSQL) and posts account-specific alerts to CS/account slack channels, flagging account health changes and threshold breaches for proactive action.</p>
+              <p class="timeline-text bullet">• Ran an 8-lesson AI upskilling program for a 6-person team (8 weeks): designed a structured training on LLMs/ChatGPT, how tokens work, prompt, RAG/retrieval, evaluation and agentic workflows; delivered slide decks and hands-on labs. Outcome: teammates reported better day-to-day use of AI tools and stronger problem-solving.</p>
+              <p class="timeline-text bullet">• Launched a Security+ cohort for my team: scoped phases, led weekly study sessions, got materials and scheduled practice tests to prepare for certification.</p>
             </li>
-
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Data Enginner Intern at Arkose Labs</h4>
-
-              <span>April 2024 — December 2024</span>
-              <br>
-              <p class="timeline-text">
-                • I learned a lot in a fast-paced and iterative environment, where adaptability and problem-solving were key. Experiencing the startup environment gave me huge responsibilities and exposed me to real business needs, pushing me to grow quickly. This was the best learning experience I could have-asked for challenging, rewarding and truly impactful.
-              </p>
+              <h4 class="h4 timeline-item-title">Data Engineer Intern</h4>
+              <p class="timeline-text">Arkose Labs<br>Escazú, Costa Rica<br>04/2024 - 01/2025</p>
+              <p class="timeline-text">I worked in a fast-paced and iterative startup environment where adaptability and problem-solving were critical. I was given significant responsibility early on and exposed to real business challenges, allowing me to grow quickly. This was an invaluable learning experience that prepared me for delivering data solutions with real impact.</p>
             </li>
-
-
           </ol>
-
         </section>
 
-         <!--
-          - service
-        -->
-
-<!-- Sección Skills destacadas Python y SQL con cuadros existentes -->
-
-      <section class="service">
-
-        <h3 class="h3 service-title">Skills</h3>
-
-
-        <!-- Otras habilidades simplificadas en formato timeline-list -->
-
-        <br>
-        <ol class="timeline-list">
-
-          <li class="timeline-item">
-            <h4 class="h4 timeline-item-title">Python / SQL / ETL Pipelines / Airflow / Data Modeling  / APIs Managment / Databricks</h4>
-          </li>
-          <li class="timeline-item">
-            <h4 class="h4 timeline-item-title">PostgreSQL / SQL Server / AWS -S3,Athena,Glue,RDS,Lambda,Cloudwatch,ECR</h4>
-          </li>
-          <li class="timeline-item">
-            <h4 class="h4 timeline-item-title">Linux / Git / GitHub / Docker / Terraform (basic knowledge)/ QA scripts</h4>
-          </li>
-          <li class="timeline-item">
-            <h4 class="h4 timeline-item-title"> Looker Studio / Power BI / Data Visualization</h4>
-          </li>
-          <li class="timeline-item">
-            <h4 class="h4 timeline-item-title"> Scrum / Agile / JIRA / Confluence / Documentation / Sprint Planning / Mentoring</h4>
-          </li>
-          <li class="timeline-item">
-            <h4 class="h4 timeline-item-title"> Third Party Tools: Zendesk, Salesforce, Gainsight, Harvest, Pylon, Slack</h4>
-          </li>
-          
-          
-          
-        </ul>
-
-      </section>
-
-
+        <!-- Skills -->
+        <section class="service">
+          <h3 class="h3 service-title">Skills</h3>
+          <ol class="timeline-list">
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">Data Engineering: Python · SQL · ETL · APIs integration</h4></li>
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">AWS Cloud: S3 · Glue Catalog · Athena · RDS PostgreSQL · ECS (Fargate) · ECR · CloudWatch · EventBridge</h4></li>
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">Orchestration & DevOps: Airflow · Git/GitHub · Docker · Terraform · Linux</h4></li>
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">Business Intelligence: Looker Studio · Customer‑facing & Executive Reporting</h4></li>
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">Agile & Collaboration: Scrum · JIRA · Confluence · Technical Documentation · Sprint Planning · Mentoring</h4></li>
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">Third‑Party Tools: Slack · Zendesk · Salesforce · Gainsight · Harvest · Pylon</h4></li>
+          </ol>
+        </section>
       </article>
 
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
+      <!-- CERTIFICATIONS -->
       <article class="certifications" data-page="certifications">
-
         <header>
-          <h2 class="h3 article-title">Certifications</h3>
+          <h2 class="h2 article-title">Certifications</h2>
         </header>
 
         <section class="about-text">
-          <p>
-            I enjoy taking certifications because they give me a structured way to learn while keeping things interesting :)  <p>
-          <p>
+          <p>I enjoy taking certifications because they give me a structured way to learn while keeping things interesting :)</p>
         </section>
 
-
         <section class="projects">
-
           <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Azure</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>AWS</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Databricks</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Other</button>
-            </li>
-
+            <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+            <li class="filter-item"><button data-filter-btn>Azure</button></li>
+            <li class="filter-item"><button data-filter-btn>AWS</button></li>
+            <li class="filter-item"><button data-filter-btn>Databricks</button></li>
+            <li class="filter-item"><button data-filter-btn>Other</button></li>
           </ul>
 
           <div class="filter-select-box">
-
             <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
+              <div class="select-value" data-select-value>Select category</div>
+              <div class="select-icon"><ion-icon name="chevron-down"></ion-icon></div>
             </button>
-
             <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Azure</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>AWS</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Databricks</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Other</button>
-              </li>
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>Azure</button></li>
+              <li class="select-item"><button data-select-item>AWS</button></li>
+              <li class="select-item"><button data-select-item>Databricks</button></li>
+              <li class="select-item"><button data-select-item>Other</button></li>
             </ul>
-
           </div>
 
           <ul class="project-list">
-
-           
-            <li class="project-item  active" data-filter-item data-category="azure">
-              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/F824A762F0E20B94?sharingId=2A5B3EF9126FFAE3">
-
+            <li class="project-item active" data-filter-item data-category="azure">
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/F824A762F0E20B94?sharingId=2A5B3EF9126FFAE3" target="_blank" rel="noopener">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/azuredata.png" alt="orizon" loading="lazy">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/azuredata.png" alt="Azure Data Fundamentals" loading="lazy" />
                 </figure>
-
                 <h3 class="project-title">Azure Data Fundamentals</h3>
-
                 <p class="project-category">Microsoft Azure</p>
-
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="azure">
-              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/91CED4D30E28DCB7?sharingId=2A5B3EF9126FFAE3">
-
+            <li class="project-item active" data-filter-item data-category="azure">
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/91CED4D30E28DCB7?sharingId=2A5B3EF9126FFAE3" target="_blank" rel="noopener">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/azurefundamentals.png" alt="orizon" loading="lazy">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/azurefundamentals.png" alt="Azure Fundamentals" loading="lazy" />
                 </figure>
-
                 <h3 class="project-title">Azure Fundamentals</h3>
-
                 <p class="project-category">Microsoft Azure</p>
-
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="azure">
-              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/305E5295104C5CE1?sharingId=2A5B3EF9126FFAE3">
-
+            <li class="project-item active" data-filter-item data-category="azure">
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/305E5295104C5CE1?sharingId=2A5B3EF9126FFAE3" target="_blank" rel="noopener">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/azureia.png" alt="orizon" loading="lazy">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/azureia.png" alt="Azure AI Fundamentals" loading="lazy" />
                 </figure>
-
                 <h3 class="project-title">Azure AI Fundamentals</h3>
-
                 <p class="project-category">Microsoft Azure</p>
-
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="databricks">
-              <a href="https://credentials.databricks.com/2c7e2eae-85f9-4364-92fd-dc3871686e68#acc.ive7BXTc">
-
+            <li class="project-item active" data-filter-item data-category="databricks">
+              <a href="https://credentials.databricks.com/2c7e2eae-85f9-4364-92fd-dc3871686e68#acc.ive7BXTc" target="_blank" rel="noopener">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/associate-badge-de.png" alt="orizon" loading="lazy">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/associate-badge-de.png" alt="Databricks Certified Data Engineer Associate" loading="lazy" />
                 </figure>
-
-                <h3 class="project-title">Databricks Certified Data Engineer Associate
-                </h3>
-
+                <h3 class="project-title">Databricks Certified Data Engineer Associate</h3>
                 <p class="project-category">Databricks</p>
-
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="databricks">
-              <a href="https://universityalliance.databricks.com/7753402a-a1a5-4f5c-90a2-71c7d1290b94#acc.vE0cCyku">
-
+            <li class="project-item active" data-filter-item data-category="databricks">
+              <a href="https://universityalliance.databricks.com/7753402a-a1a5-4f5c-90a2-71c7d1290b94#acc.vE0cCyku" target="_blank" rel="noopener">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/bootcamp.png" alt="orizon" loading="lazy">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/bootcamp.png" alt="Databricks Bootcamp" loading="lazy" />
                 </figure>
-
-                <h3 class="project-title">Databricks Data Engineering BootCamp 2025
-                </h3>
-
+                <h3 class="project-title">Databricks Data Engineering BootCamp 2025</h3>
                 <p class="project-category">Databricks</p>
-
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="databricks">
-              <a href="https://credentials.databricks.com/13310e5e-d06d-457e-9928-d013045c9b69#acc.gbpktMdH">
-
+            <li class="project-item active" data-filter-item data-category="databricks">
+              <a href="https://credentials.databricks.com/13310e5e-d06d-457e-9928-d013045c9b69#acc.gbpktMdH" target="_blank" rel="noopener">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/generative ai.jpg" alt="orizon" loading="lazy">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/generative ai.jpg" alt="Generative AI Fundamentals" loading="lazy" />
                 </figure>
-
                 <h3 class="project-title">Accreditation - Generative AI Fundamentals</h3>
-
                 <p class="project-category">Databricks</p>
-
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="databricks">
-              <a href="https://credentials.databricks.com/0a26939c-3a58-4618-be18-242508b827eb#acc.rh8Hg4a1">
-
+            <li class="project-item active" data-filter-item data-category="databricks">
+              <a href="https://credentials.databricks.com/0a26939c-3a58-4618-be18-242508b827eb#acc.rh8Hg4a1" target="_blank" rel="noopener">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/lakehouse-fundamentals.png" alt="orizon" loading="lazy">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/lakehouse-fundamentals.png" alt="Databricks Fundamentals" loading="lazy" />
                 </figure>
-
                 <h3 class="project-title">Accreditation - Databricks Fundamentals</h3>
-
                 <p class="project-category">Databricks</p>
-
               </a>
             </li>
 
-
-            <li class="project-item  active" data-filter-item data-category="databricks">
-              <a href="https://credentials.databricks.com/6c74c7c4-f5b8-4886-9452-aed5ac8b0771#acc.6MvmdZfB">
-
+            <li class="project-item active" data-filter-item data-category="databricks">
+              <a href="https://credentials.databricks.com/6c74c7c4-f5b8-4886-9452-aed5ac8b0771#acc.6MvmdZfB" target="_blank" rel="noopener">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/1731482999417.jpg" alt="orizon" loading="lazy">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/1731482999417.jpg" alt="AWS Databricks Platform Architect" loading="lazy" />
                 </figure>
-
                 <h3 class="project-title">Accreditation - AWS Databricks Platform Architect</h3>
-
                 <p class="project-category">Databricks</p>
-
               </a>
             </li>
-             <!--  -
-            <li class="project-item  active" data-filter-item data-category="aws">
-              <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/AWS-Certified-Cloud-Practitioner_badge.634f8a21af2e0e956ed8905a72366146ba22b74c.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">AWS Certified CLoud Practitioner</h3>
-
-                <p class="project-category">AWS</p>
-
-              </a>
-            </li>
-             -->
-            <!--  -
-
-            <li class="project-item  active" data-filter-item data-category="other">
-              <a href="https://www.credly.com/org/ibm/badge/ibm-data-engineering-professional-certificate">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/ibmcertificate.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">IBM Data Engineering Professional Certificate</h3>
-
-                <p class="project-category">Other</p>
-
-              </a>
-            </li>
-           -->
           </ul>
-
         </section>
-
       </article>
 
-
-
-       <!--
-        - #Projects
-      -->
-
-
-
+      <!-- PORTFOLIO -->
       <article class="portfolio" data-page="portfolio">
         <header>
           <h2 class="h2 article-title">Portfolio</h2>
         </header>
-      
         <section class="projects">
           <p class="service-item-text" style="margin-bottom: 25px; font-weight: bold;">Here is where my portfolio would be... if I had one!</p>
-          
           <p class="service-item-text" style="margin-bottom: 20px;">Jokes aside, one of my personal goals is to start adding projects here as I explore new technologies. Hope to begin soon! 🚀</p>
-          
         </section>
       </article>
-
-       <!--
-        - #Projetcs
-      -->
-
-
-
-      <!--
-        - #BLOG
-      
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Dic 10, 2023</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">My blogs will be here</h3>
-
-                  <p class="blog-text">
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-        
-          </ul>
-
-        </section>
-
-      </article>
-
-
- 
-      -->
-
-      <!--
-        - #CONTACT
-      -->
-
     </div>
-
   </main>
 
-
-
-
-
-  <!--
-    - custom js link
-  -->
+  <!-- custom js -->
   <script src="./assets/js/script.js"></script>
 
-  <!--
-    - ionicon link
-  -->
+  <!-- ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    // NAV TABS
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+    const pages = document.querySelectorAll('article[data-page]');
+    navLinks.forEach(btn => {
+      btn.addEventListener('click', () => {
+        navLinks.forEach(b => b.classList.remove('active'));
+        pages.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.dataset.target || btn.textContent.trim().toLowerCase();
+        const page = document.querySelector(`article[data-page="${target}"]`);
+        if(page) page.classList.add('active');
+      });
+    });
 
+    // SIDEBAR MORE
+    const sidebarBtn = document.querySelector('[data-sidebar-btn]');
+    const sidebar = document.querySelector('.sidebar');
+    sidebarBtn && sidebarBtn.addEventListener('click', () => {
+      sidebar && sidebar.classList.toggle('active');
+    });
+
+    // CERTIFICATIONS FILTER BUTTONS
+    const filterButtons = document.querySelectorAll('[data-filter-btn]');
+    const projects = document.querySelectorAll('.project-list .project-item');
+    function applyFilter(category){
+      projects.forEach(item => {
+        const cat = (item.getAttribute('data-category') || '').toLowerCase();
+        const show = category === 'all' || cat === category;
+        item.classList.toggle('active', show);
+        item.style.display = show ? '' : 'none';
+      });
+    }
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilter(btn.textContent.trim().toLowerCase());
+      });
+    });
+
+    // SELECT DROPDOWN SYNC WITH FILTER
+    const select = document.querySelector('[data-select]');
+    const selectValue = document.querySelector('[data-select-value]');
+    const selectItems = document.querySelectorAll('.select-list [data-select-item]');
+    select && select.addEventListener('click', () => select.classList.toggle('active'));
+    selectItems.forEach(it => it.addEventListener('click', () => {
+      const text = it.textContent.trim();
+      if(selectValue) selectValue.textContent = text;
+      // trigger corresponding button
+      filterButtons.forEach(b => {
+        if(b.textContent.trim().toLowerCase() === text.toLowerCase()) b.click();
+      });
+      select && select.classList.remove('active');
+    }));
+
+    // Initial state
+    const activeBtn = document.querySelector('[data-nav-link].active');
+    if(!document.querySelector('article[data-page].active')){
+      const first = document.querySelector('article[data-page]');
+      first && first.classList.add('active');
+    }
+    // Ensure default filter shows All
+    applyFilter('all');
+  });
+</script>
 </body>
 
 </html>
