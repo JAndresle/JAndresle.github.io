@@ -37,8 +37,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
   /* Minimal, design-safe tweaks */
-  /* Keep original theme; only adjust clouds size & link styling */
-  .clients-list.clouds-compact .clients-item img{height:64px; width:auto;}
+  .about-text p{margin-bottom:0.6em;}
+  .about-text a{display:inline;}
+  .service-emoji{font-size:2rem;line-height:1;display:flex;align-items:center;justify-content:center;}
+  @media (min-width:1024px){.service-list--three{grid-template-columns:repeat(3,1fr);align-items:start;}}
   .timeline-text a{color:inherit; text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
   .timeline-text.xp-heading{margin-top:12px; font-weight:600}
   .timeline-text.subpoint{margin:4px 0 4px 1rem}
@@ -140,69 +142,85 @@
         </header>
 
         <section class="about-text">
-          <h4>Hey! I'm Jose Andres 🚀</h4>
-          <p>B.S in Computer Science. I’ve worked in Data Engineering building pipelines and data models that turn complex raw data into insights and business value.</p>
+          <h4>Hey! I’m Jose Andres 🚀</h4>
+          <p>B.S in Computer Science. I work in Data Engineering at <a href="https://www.arkoselabs.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Arkose Labs</a>, a cybersecurity startup focused on bot management and fraud prevention, where I now own the end-to-end of data workflows, building scalable pipelines and data models that transform event and raw data into insights and business value. I work very closely with business intelligence products and reports that serve enterprise customers like Microsoft, Adobe, Meta, and Sony.</p>
           <p>I believe that strong teamwork and open communication lead to the best solutions. I enjoy collaborating across teams, sharing knowledge and supporting others in their growth. Seeing the impact of good collaboration is something I truly value.</p>
-          <p>I’m an enthusiastic Databricks user who believes generative AI will reshape analytics. In my free time I dive into LLMs and how these technologies work.</p>
+          <p>I’m genuinely excited about the future of tech, and AI especially. I love connecting the dots, testing, iterating, building. I’m endlessly curious about these topics, and just as much as I love learning, I love sharing what I learn: helping teammates create better Jira tickets, manage their Asana to-do lists, keep documentation clean in Confluence, and build sharper visualizations for decks and custom reports. Sharing knowledge is the best way I’ve found to solidify it, and the curiosity it sparks is what keeps me learning and feeling really optimistic about what’s ahead.</p>
         </section>
 
-        <!-- Areas of interest -->
+        <!-- What I Do -->
         <section class="service">
-          <h3 class="h3 service-title">My areas of interest</h3>
+          <h3 class="h3 service-title">What I Do</h3>
           <ul class="service-list">
             <li class="service-item">
               <div class="service-icon-box">
-                <img src="./assets/images/data-trends-svgrepo-com.svg" alt="Data Engineering" width="40" />
+                <span class="service-emoji">🗄️</span>
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Engineering</h4>
-                <p class="service-item-text">Pipelines and models that make data reliable and ready to use.</p>
+                <h4 class="h4 service-item-title">End-to-End Pipelines</h4>
+                <p class="service-item-text">I design and build pipelines that move data from source systems to gold tables ready for analytics, with reliability and clear monitoring.</p>
               </div>
             </li>
             <li class="service-item">
               <div class="service-icon-box">
-                <img src="./assets/images/ai-platform-svgrepo-com.svg" alt="Generative AI" width="40" />
+                <span class="service-emoji">📊</span>
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Generative AI</h4>
-                <p class="service-item-text">Exploring LLMs to automate tasks and create new value.</p>
+                <h4 class="h4 service-item-title">BI &amp; Reporting</h4>
+                <p class="service-item-text">I build the data layer that powers BI platforms, turning raw events into the insights teams use to drive business value.</p>
               </div>
             </li>
             <li class="service-item">
               <div class="service-icon-box">
-                <img src="./assets/images/cloud-backup-svgrepo-com.svg" alt="Cloud" width="40" />
+                <span class="service-emoji">🤖</span>
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Cloud</h4>
-                <p class="service-item-text">Scalable platforms to store and process data efficiently.</p>
+                <h4 class="h4 service-item-title">AI Integration</h4>
+                <p class="service-item-text">Bringing LLMs and agentic workflows into data and analytics workflows to automate, accelerate, and personalize at scale.</p>
               </div>
             </li>
             <li class="service-item">
               <div class="service-icon-box">
-                <img src="./assets/images/page-analysis-svgrepo-com.svg" alt="Analytics" width="40" />
+                <span class="service-emoji">🧠</span>
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Analytics</h4>
-                <p class="service-item-text">From raw numbers to simple, useful insights.</p>
+                <h4 class="h4 service-item-title">Knowledge Sharing</h4>
+                <p class="service-item-text">Running upskilling programs, leading study cohorts, and helping teammates level up their data, security, and AI skills.</p>
               </div>
             </li>
           </ul>
         </section>
 
-        <!-- Clouds logos -->
-        <section>
-          <h3 class="h3 clients-title">Clouds</h3>
-          <p class="service-item-text">Currently working on improving my cloud skills 💪</p>
-          <ul class="clients-list has-scrollbar clouds-compact">
-            <li class="clients-item">
-              <a href="https://learn.microsoft.com/en-us/azure/?product=popular" target="_blank" rel="noopener">
-                <img src="./assets/images/Azure.png" alt="Azure" height="56" />
-              </a>
+        <!-- Currently Building & Exploring -->
+        <section class="service">
+          <h3 class="h3 service-title">Currently Building &amp; Exploring</h3>
+          <ul class="service-list service-list--three">
+            <li class="service-item">
+              <div class="service-icon-box">
+                <span class="service-emoji">❄️</span>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Migrating to Snowflake</h4>
+                <p class="service-item-text">Leading the migration of ~70 tables from Athena/Postgres to Snowflake, scoping dependencies, redesigning models, and shaping the next chapter of our data platform.</p>
+              </div>
             </li>
-            <li class="clients-item">
-              <a href="https://docs.aws.amazon.com/" target="_blank" rel="noopener">
-                <img src="./assets/images/AWS.png" alt="AWS" height="56" />
-              </a>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <span class="service-emoji">✨</span>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Bringing AI Into Analytics</h4>
+                <p class="service-item-text">Integrating Claude and agentic workflows into our reporting stack to deliver hyper-personalized customer insights at scale.</p>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <span class="service-emoji">🎓</span>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Always Learning</h4>
+                <p class="service-item-text">Exploring agents, Claude Code, and the tools shaping the future of data and analytics. Sharing what I learn with my team along the way.</p>
+              </div>
             </li>
           </ul>
         </section>
