@@ -44,6 +44,22 @@
   .timeline-text a{color:inherit; text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
   .timeline-text.xp-heading{margin-top:12px; font-weight:600}
   .timeline-text.subpoint{margin:4px 0 4px 1rem}
+  .timeline-bullet-list{list-style:none;padding:0;margin:0.6rem 0;}
+  .timeline-bullet-list>li{position:relative;padding-left:1.4rem;margin-bottom:0.75rem;font-size:var(--fs-6);line-height:1.6;color:var(--light-gray);}
+  .timeline-bullet-list>li::before{content:"•";position:absolute;left:0;color:var(--vegas-gold);}
+  .timeline-sublist{list-style:none;padding:0;margin:0.4rem 0 0.2rem 0.8rem;}
+  .timeline-sublist>li{position:relative;padding-left:1.4rem;margin-bottom:0.3rem;font-size:var(--fs-6);line-height:1.5;color:var(--light-gray);}
+  .timeline-sublist>li::before{content:"–";position:absolute;left:0;}
+  .timeline-bullet-list a{display:inline;color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;}
+  #xp-duration{color:var(--vegas-gold);}
+  /* Certifications grid: 4 cols desktop, 2 tablet, 1 mobile */
+  @media (min-width:1024px){.certifications .project-list{grid-template-columns:repeat(4,1fr);}}
+  /* Cert image container */
+  .cert-img-box{width:100%;aspect-ratio:1/1;max-width:200px;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(255,255,255,0.02);border-radius:12px;margin:0 auto;}
+  .cert-img-box img{max-width:100%;max-height:100%;object-fit:contain;height:auto;width:auto;}
+  /* Cert card hover */
+  .certifications .project-item a{transition:transform 0.2s ease,box-shadow 0.2s ease;}
+  .certifications .project-item a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3);cursor:pointer;}
 </style>
 </head>
 
@@ -241,7 +257,7 @@
           <ol class="timeline-list">
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Universidad Cenfotec</h4>
-              <span>2024 — 2025</span>
+              <span>2024 — 2026</span>
               <p class="timeline-text">Master's Degree in Databases and Analytics</p>
               <p style="color:bisque">In Progress</p>
               <p class="timeline-text">Balancing work, a Master's Degree and personal life has been a challenge, some days I win, some days I just try again tomorrow.</p>
@@ -264,25 +280,33 @@
           <ol class="timeline-list">
             <li class="timeline-item xp-item">
               <h4 class="h4 timeline-item-title">Associate Data Engineer</h4>
-              <p class="timeline-text">Arkose Labs<br>Escazú, Costa Rica<br>01/2025 - Present</p>
-              <p class="timeline-text">As a Data Engineer in the Customer Success team, I turn raw data into clean datasets that power an automated BI reporting platform in Looker Studio that CS teams use to present value to more than +70 customers and that executives use to monitor portfolio health and renewals. I drive cross-team technical alignment with Professional Services, Account Management and Solutions Engineering to maintain a single source of truth across reporting use cases, shared definitions and KPI calculations. I lead the data engineering work to evaluate and prioritize requests, define scope and turn the most valuable ones into production datasets that support business value.</p>
+              <p class="timeline-text">Arkose Labs · Escazú, Costa Rica · 01/2025 — Present <span id="xp-duration"></span></p>
+              <p class="timeline-text">As a Data Engineer in the Customer Success team, I own the data backend that turns raw event data into clean datasets powering an automated BI reporting platform built in Looker Studio. CS teams use it to present value to enterprise customers, and executives use it to monitor portfolio health and renewals. I drive cross-team technical alignment with Professional Services, Account Management, and Solutions Engineering to maintain a single source of truth across reporting use cases, shared definitions, and KPI calculations. I lead the planning and scoping for incoming requests, prioritizing what delivers the most business value and turning it into production-ready datasets, fast.</p>
               <p class="timeline-text xp-heading">Key achievements</p>
-              <p class="timeline-text bullet">• Owned and maintained the pipelines and data warehouse (Postgres) that power the Customer Success automated BI reporting platform; improved freshness to twice-daily runs (from once daily) by optimizing queries and schedules. Reduced manual prep time:</p>
-              <p class="timeline-text subpoint">QBRs: from 2 hours to 10 minutes per customer.</p>
-              <p class="timeline-text subpoint">Monthly reports: from 1 hour to 5 minutes per customer.</p>
-              <p class="timeline-text subpoint">Post-attack reports: from 2 hours to 10 minutes per incident.</p>
-              <p class="timeline-text subpoint">Threat-Intel reports data source: from 6 hours getting exports of data from different sources to 30min getting the data centralized from the BI reporting platform; latest example of the last quarter's report: <a href="https://www.arkoselabs.com/resource/threat-actor-report-scammer-focus" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Threat Actor Report – Scammer Focus</a>.</p>
-              <p class="timeline-text bullet">• Led end-to-end data engineering workflow for two CS churn-prevention initiatives): from source systems discovery and API integrations, transforming raw (bronze) to -> clean datasets (silver)-> and loading into postgres tables (gold).</p>
-              <p class="timeline-text subpoint">Account Health Score: blends onboarding, adoption, performance, and retention to flag risk up to 6 months earlier.</p>
-              <p class="timeline-text subpoint">Customer Quadrant Classification: segments by health × value to focus actions and target ≥5 expansion opps/quarter.</p>
-              <p class="timeline-text bullet">• Planned, scoped and executed the migration of Python ETL code from ECS Fargate/ECR to Airflow (Amazon MWAA) to achieve more reliable runs, better isolation of data processing, stronger QA checks and less manual work. I designed a phased migration plan with a pipeline inventory and dependencies. In Airflow, DAG pipelines run under one scheduler with clear retries and simple monitoring; heavy jobs were split into smaller tasks to isolate failures. 5 pipelines migrated successfully; 2 remain to finish in Q3.</p>
-              <p class="timeline-text bullet">• Built a Slack alerting system in Python that queries Gold tables (PostgreSQL) and posts account-specific alerts to CS/account slack channels, flagging account health changes and threshold breaches for proactive action.</p>
-              <p class="timeline-text bullet">• Ran an 8-lesson AI upskilling program for a 6-person team (8 weeks): designed a structured training on LLMs/ChatGPT, how tokens work, prompt, RAG/retrieval, evaluation and agentic workflows; delivered slide decks and hands-on labs. Outcome: teammates reported better day-to-day use of AI tools and stronger problem-solving.</p>
-              <p class="timeline-text bullet">• Launched a Security+ cohort for my team: scoped phases, led weekly study sessions, got materials and scheduled practice tests to prepare for certification.</p>
+              <ul class="timeline-bullet-list">
+                <li><strong>Owned and scaled the Customer Success Business Intelligence platform data backend</strong>, the source of truth for product usage and value, adoption and engagement, and customer portfolio intelligence and health. The platform centralizes data from multiple sources (product event data lakes, Zendesk, Gainsight, Pylon, Slack, Jira, Harvest) into a unified PostgreSQL warehouse through dedicated pipelines, serving CS, executives, and stakeholder teams.</li>
+                <li><strong>Cut manual reporting time across the team</strong> by optimizing queries and schedules; the BI platform now refreshes twice daily (up from once):
+                  <ul class="timeline-sublist">
+                    <li>QBRs: from 2 hours to 10 minutes per customer</li>
+                    <li>Monthly Security Reports: from 2 hours to a fully automated Slack-delivered report</li>
+                    <li>Post-attack reports: from 2–3 hours to 10 minutes per incident</li>
+                    <li>Threat Intel reports for Marketing: from 6–8 hours of manual exports to 30 minutes of centralized data. Recent examples: <a href="https://www.arkoselabs.com/resource/threat-actor-patterns-released-q2-2025-report/" target="_blank" rel="noopener noreferrer">Threat Actor Patterns Q2 2025</a> and <a href="https://www.arkoselabs.com/resource/2026-agentic-ai-security-report/" target="_blank" rel="noopener noreferrer">2026 Agentic AI Security Report</a></li>
+                  </ul>
+                </li>
+                <li><strong>Leading my team's AI adoption strategy</strong>, primarily on the Claude stack, defining how AI integrates into our current tools and processes. The vision: build intelligence layers that produce hyper-personalized, standardized customer reports that today require heavy manual customization. Early wins are already showing in daily tasks (ticket creation, to-do lists, documentation, coding). I'm excited to lead this transformation and turn frontier technology into real business value. As part of this, I designed and ran an 8-lesson AI upskilling program for a 6-person team covering LLMs, how tokens work, prompting, RAG, evaluation, and agentic workflows, delivered with slide decks and hands-on labs.</li>
+                <li><strong>Led end-to-end data engineering for two churn and contraction prevention initiatives</strong>, from source system discovery and API integrations to transforming raw → clean → gold datasets in PostgreSQL:
+                  <ul class="timeline-sublist">
+                    <li><strong>Customer Health Score &amp; Quadrant Classification</strong>: blends adoption and engagement signals across 20+ metrics into a standardized health score, with custom recommendations sent up to 6 months before renewal so teams can act on risks and opportunities early.</li>
+                  </ul>
+                </li>
+                <li><strong>Planned, scoped, and executed the migration of Python ETL code from ECS Fargate/ECR to Airflow (Amazon MWAA)</strong>, achieving more reliable runs, better isolation of data processing, stronger QA checks, and less manual work. Designed a phased migration plan with full pipeline inventory and dependencies. In Airflow, DAG pipelines run under one scheduler with clear retries and simple monitoring; heavy jobs were split into smaller tasks to isolate failures. <strong>7 pipelines migrated successfully.</strong></li>
+                <li><strong>Currently leading the migration of the Customer Success data backend to Snowflake</strong> (~70 tables): scoping the migration plan, mapping dependencies, redesigning data models, and shaping the next chapter of our CS data platform. Aligning with the broader Data team that owns the company-wide migration to ensure consistency in patterns and standards.</li>
+                <li><strong>Launched a Security+ certification cohort for my team</strong>: scoped phases, led weekly study sessions, gathered materials, and scheduled practice tests to prepare teammates for certification. Sharing knowledge and watching teammates grow their careers is one of the parts of this work I enjoy most.</li>
+              </ul>
             </li>
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Data Engineer Intern</h4>
-              <p class="timeline-text">Arkose Labs<br>Escazú, Costa Rica<br>04/2024 - 01/2025</p>
+              <p class="timeline-text">Arkose Labs · Escazú, Costa Rica · 04/2024 — 01/2025</p>
               <p class="timeline-text">I worked in a fast-paced and iterative startup environment where adaptability and problem-solving were critical. I was given significant responsibility early on and exposed to real business challenges, allowing me to grow quickly. This was an invaluable learning experience that prepared me for delivering data solutions with real impact.</p>
             </li>
           </ol>
@@ -293,10 +317,12 @@
           <h3 class="h3 service-title">Skills</h3>
           <ol class="timeline-list">
             <li class="timeline-item"><h4 class="h4 timeline-item-title">Data Engineering: Python · SQL · ETL · APIs integration</h4></li>
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">AWS Cloud: S3 · Glue Catalog · Athena · RDS PostgreSQL · ECS (Fargate) · ECR · CloudWatch · EventBridge</h4></li>
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">Orchestration & DevOps: Airflow · Git/GitHub · Docker · Terraform · Linux</h4></li>
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">Business Intelligence: Looker Studio · Customer‑facing & Executive Reporting</h4></li>
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">Agile & Collaboration: Scrum · JIRA · Confluence · Technical Documentation · Sprint Planning · Mentoring</h4></li>
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">Data Cloud Platforms: Databricks (Delta Lake · Unity Catalog · Workflows · DLT · Lakeflow) · Snowflake (Warehouses · Stages · Tasks · Streams · Dynamic Tables)</h4></li>
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">AWS: S3 · Glue Catalog · Athena · RDS PostgreSQL · ECS (Fargate) · ECR · CloudWatch · EventBridge</h4></li>
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">Orchestration &amp; DevOps: Airflow · Git/GitHub · Docker · Terraform · Linux</h4></li>
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">Business Intelligence: Looker Studio · Customer‑facing &amp; Executive Reporting</h4></li>
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">AI &amp; LLMs: Claude · Claude Code · Agents · Prompt Engineering · RAG</h4></li>
+            <li class="timeline-item"><h4 class="h4 timeline-item-title">Agile &amp; Collaboration: Scrum · JIRA · Confluence · Technical Documentation · Sprint Planning · Mentoring</h4></li>
             <li class="timeline-item"><h4 class="h4 timeline-item-title">Third‑Party Tools: Slack · Zendesk · Salesforce · Gainsight · Harvest · Pylon</h4></li>
           </ol>
         </section>
@@ -315,9 +341,8 @@
         <section class="projects">
           <ul class="filter-list">
             <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
-            <li class="filter-item"><button data-filter-btn>Azure</button></li>
-            <li class="filter-item"><button data-filter-btn>AWS</button></li>
-            <li class="filter-item"><button data-filter-btn>Databricks</button></li>
+            <li class="filter-item"><button data-filter-btn data-filter-value="cloud">Cloud</button></li>
+            <li class="filter-item"><button data-filter-btn data-filter-value="data-cloud-platforms">Data Cloud Platforms</button></li>
             <li class="filter-item"><button data-filter-btn>Other</button></li>
           </ul>
 
@@ -328,99 +353,146 @@
             </button>
             <ul class="select-list">
               <li class="select-item"><button data-select-item>All</button></li>
-              <li class="select-item"><button data-select-item>Azure</button></li>
-              <li class="select-item"><button data-select-item>AWS</button></li>
-              <li class="select-item"><button data-select-item>Databricks</button></li>
+              <li class="select-item"><button data-select-item>Cloud</button></li>
+              <li class="select-item"><button data-select-item>Data Cloud Platforms</button></li>
               <li class="select-item"><button data-select-item>Other</button></li>
             </ul>
           </div>
 
           <ul class="project-list">
-            <li class="project-item active" data-filter-item data-category="azure">
-              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/F824A762F0E20B94?sharingId=2A5B3EF9126FFAE3" target="_blank" rel="noopener">
+
+            <!-- Row 1: SnowPro · DB DE Associate · DB BootCamp · AWS DB Architect -->
+            <li class="project-item active" data-filter-item data-category="data-cloud-platforms">
+              <a href="#" aria-label="View SnowPro Core certification">
                 <figure class="project-img">
                   <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                  <img src="./assets/images/azuredata.png" alt="Azure Data Fundamentals" loading="lazy" />
+                  <div class="cert-img-box"><img src="./assets/images/snowcore.png" alt="SnowPro Core" loading="lazy" /></div>
                 </figure>
-                <h3 class="project-title">Azure Data Fundamentals</h3>
-                <p class="project-category">Microsoft Azure</p>
+                <h3 class="project-title">SnowPro Core (COF-C03)</h3>
+                <p class="project-category">Snowflake</p>
               </a>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="azure">
-              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/91CED4D30E28DCB7?sharingId=2A5B3EF9126FFAE3" target="_blank" rel="noopener">
+            <li class="project-item active" data-filter-item data-category="data-cloud-platforms">
+              <a href="https://credentials.databricks.com/2c7e2eae-85f9-4364-92fd-dc3871686e68#acc.ive7BXTc" target="_blank" rel="noopener noreferrer" aria-label="Verify Databricks Certified Data Engineer Associate on Databricks">
                 <figure class="project-img">
                   <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                  <img src="./assets/images/azurefundamentals.png" alt="Azure Fundamentals" loading="lazy" />
-                </figure>
-                <h3 class="project-title">Azure Fundamentals</h3>
-                <p class="project-category">Microsoft Azure</p>
-              </a>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="azure">
-              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/305E5295104C5CE1?sharingId=2A5B3EF9126FFAE3" target="_blank" rel="noopener">
-                <figure class="project-img">
-                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                  <img src="./assets/images/azureia.png" alt="Azure AI Fundamentals" loading="lazy" />
-                </figure>
-                <h3 class="project-title">Azure AI Fundamentals</h3>
-                <p class="project-category">Microsoft Azure</p>
-              </a>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="databricks">
-              <a href="https://credentials.databricks.com/2c7e2eae-85f9-4364-92fd-dc3871686e68#acc.ive7BXTc" target="_blank" rel="noopener">
-                <figure class="project-img">
-                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                  <img src="./assets/images/associate-badge-de.png" alt="Databricks Certified Data Engineer Associate" loading="lazy" />
+                  <div class="cert-img-box"><img src="./assets/images/associate-badge-de.png" alt="Databricks Certified Data Engineer Associate" loading="lazy" /></div>
                 </figure>
                 <h3 class="project-title">Databricks Certified Data Engineer Associate</h3>
                 <p class="project-category">Databricks</p>
               </a>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="databricks">
-              <a href="https://universityalliance.databricks.com/7753402a-a1a5-4f5c-90a2-71c7d1290b94#acc.vE0cCyku" target="_blank" rel="noopener">
+            <li class="project-item active" data-filter-item data-category="data-cloud-platforms">
+              <a href="https://universityalliance.databricks.com/7753402a-a1a5-4f5c-90a2-71c7d1290b94#acc.vE0cCyku" target="_blank" rel="noopener noreferrer" aria-label="View Databricks Data Engineering BootCamp 2025 credential">
                 <figure class="project-img">
                   <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                  <img src="./assets/images/bootcamp.png" alt="Databricks Bootcamp" loading="lazy" />
+                  <div class="cert-img-box"><img src="./assets/images/bootcamp.png" alt="Databricks Data Engineering BootCamp 2025" loading="lazy" /></div>
                 </figure>
                 <h3 class="project-title">Databricks Data Engineering BootCamp 2025</h3>
                 <p class="project-category">Databricks</p>
               </a>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="databricks">
-              <a href="https://credentials.databricks.com/13310e5e-d06d-457e-9928-d013045c9b69#acc.gbpktMdH" target="_blank" rel="noopener">
+            <li class="project-item active" data-filter-item data-category="data-cloud-platforms">
+              <a href="https://credentials.databricks.com/6c74c7c4-f5b8-4886-9452-aed5ac8b0771#acc.6MvmdZfB" target="_blank" rel="noopener noreferrer" aria-label="View AWS Databricks Platform Architect accreditation">
                 <figure class="project-img">
                   <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                  <img src="./assets/images/generative ai.jpg" alt="Generative AI Fundamentals" loading="lazy" />
+                  <div class="cert-img-box"><img src="./assets/images/1731482999417.jpg" alt="AWS Databricks Platform Architect" loading="lazy" /></div>
+                </figure>
+                <h3 class="project-title">Accreditation - AWS Databricks Platform Architect</h3>
+                <p class="project-category">Databricks</p>
+              </a>
+            </li>
+
+            <!-- Row 2: Security+ · Airflow · Claude Code 101 · Azure Fundamentals -->
+            <li class="project-item active" data-filter-item data-category="other">
+              <a href="https://www.credly.com/badges/1d0ee865-690b-4ccb-a3f0-1ef5bd1af634/linked_in_profile" target="_blank" rel="noopener noreferrer" aria-label="Verify CompTIA Security+ certification on Credly">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <div class="cert-img-box"><img src="./assets/images/comptia-security-ce-certification.png" alt="CompTIA Security+" loading="lazy" /></div>
+                </figure>
+                <h3 class="project-title">CompTIA Security+ (SY0-701)</h3>
+                <p class="project-category">CompTIA</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="other">
+              <a href="https://www.credly.com/badges/6ca44194-2ebf-42b9-97b0-d3ca9f366a62/linked_in_profile" target="_blank" rel="noopener noreferrer" aria-label="Verify Apache Airflow 3 Fundamentals certification on Credly">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <div class="cert-img-box"><img src="./assets/images/airflow-cert.png" alt="Apache Airflow 3 Fundamentals" loading="lazy" /></div>
+                </figure>
+                <h3 class="project-title">Apache Airflow 3 Fundamentals</h3>
+                <p class="project-category">Astronomer</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="other">
+              <a href="https://verify.skilljar.com/c/3czx3b7om5xv" target="_blank" rel="noopener noreferrer" aria-label="Verify Claude Code 101 certificate on Anthropic Academy">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <div class="cert-img-box"><img src="./assets/images/certificate-3czx3b7om5xv-1776132638.jpg" alt="Claude Code 101" loading="lazy" /></div>
+                </figure>
+                <h3 class="project-title">Claude Code 101</h3>
+                <p class="project-category">Anthropic Academy</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="cloud">
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/91CED4D30E28DCB7?sharingId=2A5B3EF9126FFAE3" target="_blank" rel="noopener noreferrer" aria-label="Verify Azure Fundamentals certification on Microsoft Learn">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <div class="cert-img-box"><img src="./assets/images/azurefundamentals.png" alt="Azure Fundamentals" loading="lazy" /></div>
+                </figure>
+                <h3 class="project-title">Azure Fundamentals</h3>
+                <p class="project-category">Microsoft Azure</p>
+              </a>
+            </li>
+
+            <!-- Row 3: DB GenAI Fund. · DB Fundamentals · Azure Data Fund. · Azure AI Fund. -->
+            <li class="project-item active" data-filter-item data-category="data-cloud-platforms">
+              <a href="https://credentials.databricks.com/13310e5e-d06d-457e-9928-d013045c9b69#acc.gbpktMdH" target="_blank" rel="noopener noreferrer" aria-label="View Databricks Generative AI Fundamentals accreditation">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <div class="cert-img-box"><img src="./assets/images/generative ai.jpg" alt="Generative AI Fundamentals" loading="lazy" /></div>
                 </figure>
                 <h3 class="project-title">Accreditation - Generative AI Fundamentals</h3>
                 <p class="project-category">Databricks</p>
               </a>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="databricks">
-              <a href="https://credentials.databricks.com/0a26939c-3a58-4618-be18-242508b827eb#acc.rh8Hg4a1" target="_blank" rel="noopener">
+            <li class="project-item active" data-filter-item data-category="data-cloud-platforms">
+              <a href="https://credentials.databricks.com/0a26939c-3a58-4618-be18-242508b827eb#acc.rh8Hg4a1" target="_blank" rel="noopener noreferrer" aria-label="View Databricks Fundamentals accreditation">
                 <figure class="project-img">
                   <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                  <img src="./assets/images/lakehouse-fundamentals.png" alt="Databricks Fundamentals" loading="lazy" />
+                  <div class="cert-img-box"><img src="./assets/images/lakehouse-fundamentals.png" alt="Databricks Fundamentals" loading="lazy" /></div>
                 </figure>
                 <h3 class="project-title">Accreditation - Databricks Fundamentals</h3>
                 <p class="project-category">Databricks</p>
               </a>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="databricks">
-              <a href="https://credentials.databricks.com/6c74c7c4-f5b8-4886-9452-aed5ac8b0771#acc.6MvmdZfB" target="_blank" rel="noopener">
+            <li class="project-item active" data-filter-item data-category="cloud">
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/F824A762F0E20B94?sharingId=2A5B3EF9126FFAE3" target="_blank" rel="noopener noreferrer" aria-label="Verify Azure Data Fundamentals certification on Microsoft Learn">
                 <figure class="project-img">
                   <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                  <img src="./assets/images/1731482999417.jpg" alt="AWS Databricks Platform Architect" loading="lazy" />
+                  <div class="cert-img-box"><img src="./assets/images/azuredata.png" alt="Azure Data Fundamentals" loading="lazy" /></div>
                 </figure>
-                <h3 class="project-title">Accreditation - AWS Databricks Platform Architect</h3>
-                <p class="project-category">Databricks</p>
+                <h3 class="project-title">Azure Data Fundamentals</h3>
+                <p class="project-category">Microsoft Azure</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="cloud">
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoseAndresEspinozaLedezma-7241/305E5295104C5CE1?sharingId=2A5B3EF9126FFAE3" target="_blank" rel="noopener noreferrer" aria-label="Verify Azure AI Fundamentals certification on Microsoft Learn">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <div class="cert-img-box"><img src="./assets/images/azureia.png" alt="Azure AI Fundamentals" loading="lazy" /></div>
+                </figure>
+                <h3 class="project-title">Azure AI Fundamentals</h3>
+                <p class="project-category">Microsoft Azure</p>
               </a>
             </li>
           </ul>
@@ -484,7 +556,7 @@
       btn.addEventListener('click', () => {
         filterButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        applyFilter(btn.textContent.trim().toLowerCase());
+        applyFilter(btn.dataset.filterValue || btn.textContent.trim().toLowerCase());
       });
     });
 
@@ -511,6 +583,21 @@
     }
     // Ensure default filter shows All
     applyFilter('all');
+
+    // DYNAMIC EXPERIENCE DURATION
+    (function(){
+      const start = new Date(2025, 0, 1);
+      const now = new Date();
+      let totalMonths = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+      const years = Math.floor(totalMonths / 12);
+      const months = totalMonths % 12;
+      let label = '';
+      if(years > 0) label += years + ' yr' + (years !== 1 ? 's' : '');
+      if(years > 0 && months > 0) label += ' ';
+      if(months > 0) label += months + ' mo';
+      const el = document.getElementById('xp-duration');
+      if(el && label) el.textContent = '(' + label + ')';
+    })();
   });
 </script>
 </body>
