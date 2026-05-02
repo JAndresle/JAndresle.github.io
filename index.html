@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -31,6 +31,7 @@
   <!-- custom css -->
   <link rel="stylesheet" href="./assets/css/style.css" />
 
+
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,7 +42,7 @@
   .about-text a{display:inline;}
   .service-emoji{font-size:2rem;line-height:1;display:flex;align-items:center;justify-content:center;}
   @media (min-width:1024px){.service-list--three{grid-template-columns:repeat(3,1fr);align-items:start;}}
-  .timeline-text a{color:inherit; text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
+  .timeline-text a{display:inline; color:inherit; text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
   .timeline-text.xp-heading{margin-top:24px; font-weight:600}
   .timeline-text.subpoint{margin:4px 0 4px 1rem}
   .timeline-bullet-list{list-style:none;padding:0;margin:0.6rem 0;}
@@ -51,22 +52,35 @@
   .timeline-sublist>li{position:relative;padding-left:1.4rem;margin-bottom:0.5rem;font-size:var(--fs-6);line-height:1.5;color:var(--light-gray);}
   .timeline-sublist>li::before{content:"–";position:absolute;left:0;}
   .timeline-bullet-list a{display:inline;color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;}
-  #xp-duration{color:var(--vegas-gold);}
+  #xp-duration{display:inline-block;white-space:nowrap;color:var(--accent-primary);font-size:var(--fs-8);font-weight:var(--fw-500);background:var(--accent-muted);border:1px solid transparent;padding:3px 10px;border-radius:999px;margin-left:6px;vertical-align:middle;}
+  .xp-meta-company{margin-top:3px;}
+  .xp-meta-dates{margin-top:1px!important;}
+  .xp-description{margin-top:12px!important;}
+  .skills-subtext+.skills-subtext{margin-top:4px;}
+  .platform-label{color:var(--text-secondary);font-weight:var(--fw-500);}
+  .si-icon-brand{width:30px;height:30px;object-fit:contain;}
+  [data-theme="dark"] .theme-light-only{display:none;}
+  [data-theme="light"] .theme-dark-only{display:none;}
   /* Certifications grid: 4 cols desktop, 2 tablet, 1 mobile */
   @media (min-width:1024px){.certifications .project-list{grid-template-columns:repeat(4,1fr);}}
   /* Cert image container */
-  .cert-img-box{width:100%;aspect-ratio:1/1;max-width:200px;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(255,255,255,0.02);border-radius:12px;margin:0 auto;}
+  .cert-img-box{width:100%;aspect-ratio:1/1;max-width:200px;display:flex;align-items:center;justify-content:center;padding:16px;background:var(--bg-overlay);border-radius:12px;margin:0 auto;}
   .cert-img-box img{max-width:100%;max-height:100%;object-fit:contain;height:auto;width:auto;}
+  /* Light mode: darker bg for white logos (Microsoft, CompTIA) */
+  [data-theme="light"] .cert-img-box{background:var(--bg-surface-2);}
   /* Cert card hover */
   .certifications .project-item a{transition:transform 0.2s ease,box-shadow 0.2s ease;}
-  .certifications .project-item a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3);cursor:pointer;}
+  .certifications .project-item a:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);cursor:pointer;}
 </style>
+  <script>
+    (function(){var t=localStorage.getItem('theme-preference');document.documentElement.setAttribute('data-theme',t||'dark');})();
+  </script>
 </head>
 
 <body>
   <main>
     <!-- SIDEBAR -->
-    <aside class="sidebar active" data-sidebar>
+    <aside class="sidebar">
       <div class="sidebar-info">
         <figure class="avatar-box">
           <img src="./assets/images/profile.jpeg" alt="Jose Espinoza" width="80" />
@@ -76,11 +90,6 @@
           <h1 class="name" title="Jose Espinoza">Jose Espinoza</h1>
           <p class="title">Data Engineer</p>
         </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
       </div>
 
       <div class="sidebar-info_more">
@@ -129,6 +138,8 @@
 
         <div class="separator"></div>
       </div>
+
+      <button type="button" data-theme-toggle class="theme-toggle" aria-label="Switch to light mode">☀️</button>
     </aside>
 
     <!-- MAIN CONTENT -->
@@ -161,7 +172,7 @@
           <h4>Hey! I’m Jose Andres 🚀</h4>
           <p>B.S in Computer Science. I work in Data Engineering at <a href="https://www.arkoselabs.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Arkose Labs</a>, a cybersecurity startup focused on bot management and fraud prevention, where I now own the end-to-end of data workflows, building scalable pipelines and data models that transform event and raw data into insights and business value. I work very closely with business intelligence products and reports that serve enterprise customers like Microsoft, Adobe, Meta, and Sony.</p>
           <p>I believe that strong teamwork and open communication lead to the best solutions. I enjoy collaborating across teams, sharing knowledge and supporting others in their growth. Seeing the impact of good collaboration is something I truly value.</p>
-          <p>I’m genuinely excited about the future of tech, and AI especially. I love connecting the dots, testing, iterating, building. I’m endlessly curious about these topics, and just as much as I love learning, I love sharing what I learn: helping teammates create better Jira tickets, manage their Asana to-do lists, keep documentation clean in Confluence, and build sharper visualizations for decks and custom reports. Sharing knowledge is the best way I’ve found to solidify it, and the curiosity it sparks is what keeps me learning and feeling really optimistic about what’s ahead.</p>
+          <p>I’m genuinely excited about the future of tech, and AI especially. I enjoy connecting the dots, testing, iterating, building. I’m endlessly curious about these topics, and as much as I enjoy learning, I value sharing what I learn: helping teammates create better Jira tickets, manage their Asana to-do lists, keep documentation clean in Confluence, and build sharper visualizations for decks and custom reports. Sharing knowledge is the best way I’ve found to solidify it, and the curiosity it sparks is what keeps me learning and feeling really optimistic about what’s ahead.</p>
         </section>
 
         <!-- What I Do -->
@@ -259,14 +270,14 @@
               <h4 class="h4 timeline-item-title">Universidad Cenfotec</h4>
               <span>2024 — 2026</span>
               <p class="timeline-text">Master's Degree in Databases and Analytics</p>
-              <p style="color:bisque">In Progress</p>
+              <p style="color:var(--warning)">In Progress</p>
               <p class="timeline-text">Balancing work, a Master's Degree and personal life has been a challenge, some days I win, some days I just try again tomorrow.</p>
             </li>
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Unversidad Fidélitas</h4>
               <span>2018 — 2023</span>
               <p class="timeline-text">Bachelor's Degree in Systems Computer Enginnering/Computer Science.</p>
-              <a href="https://drive.google.com/file/d/1BfqVWNQz6bS08zc-N7SN0Y59JwcAJKpS/view?usp=sharing" style="color:bisque" target="_blank" rel="noopener">Click here to see the Degree!</a>
+              <a href="https://drive.google.com/file/d/1BfqVWNQz6bS08zc-N7SN0Y59JwcAJKpS/view?usp=sharing" style="color:var(--accent-primary);text-decoration:underline;text-underline-offset:2px;" target="_blank" rel="noopener">Click here to see the Degree!</a>
             </li>
           </ol>
         </section>
@@ -280,8 +291,9 @@
           <ol class="timeline-list">
             <li class="timeline-item xp-item">
               <h4 class="h4 timeline-item-title">Associate Data Engineer</h4>
-              <p class="timeline-text">Arkose Labs · Escazú, Costa Rica · 01/2025 — Present <span id="xp-duration"></span></p>
-              <p class="timeline-text">As a Data Engineer in the Customer Success team, I own the data backend that turns raw event data into clean datasets powering an automated BI reporting platform built in Looker Studio. CS teams use it to present value to enterprise customers, and executives use it to monitor portfolio health and renewals. I drive cross-team technical alignment with Professional Services, Account Management, and Solutions Engineering to maintain a single source of truth across reporting use cases, shared definitions, and KPI calculations. I lead the planning and scoping for incoming requests, prioritizing what delivers the most business value and turning it into production-ready datasets, fast.</p>
+              <p class="timeline-text xp-meta-company"><a href="https://www.arkoselabs.com" target="_blank" rel="noopener">Arkose Labs</a> · Escazú, Costa Rica</p>
+              <p class="timeline-text xp-meta-dates">01/2025&nbsp;—&nbsp;Present&nbsp;<span id="xp-duration"></span></p>
+              <p class="timeline-text xp-description">As a Data Engineer in the Customer Success team, I own the data backend that turns raw event data into clean datasets powering an automated BI reporting platform built in Looker Studio. CS teams use it to present value to enterprise customers, and executives use it to monitor portfolio health and renewals. I drive cross-team technical alignment with Professional Services, Account Management, and Solutions Engineering to maintain a single source of truth across reporting use cases, shared definitions, and KPI calculations. I lead the planning and scoping for incoming requests, prioritizing what delivers the most business value and turning it into production-ready datasets, fast.</p>
               <p class="timeline-text xp-heading">Key achievements</p>
               <ul class="timeline-bullet-list">
                 <li><strong>Owned and scaled the Customer Success Business Intelligence platform data backend</strong>, the source of truth for product usage and value, adoption and engagement, and customer portfolio intelligence and health. The platform centralizes data from multiple sources (product event data lakes, Zendesk, Gainsight, Pylon, Slack, Jira, Harvest) into a unified PostgreSQL warehouse through dedicated pipelines, serving CS, executives, and stakeholder teams.</li>
@@ -315,16 +327,130 @@
         <!-- Skills -->
         <section class="service">
           <h3 class="h3 service-title">Skills</h3>
-          <ol class="timeline-list">
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">Data Engineering: Python · SQL · ETL · APIs integration</h4></li>
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">Data Cloud Platforms: Databricks (Delta Lake · Unity Catalog · Workflows · DLT · Lakeflow) · Snowflake (Warehouses · Stages · Tasks · Streams · Dynamic Tables)</h4></li>
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">AWS: S3 · Glue Catalog · Athena · RDS PostgreSQL · ECS (Fargate) · ECR · CloudWatch · EventBridge</h4></li>
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">Orchestration &amp; DevOps: Airflow · Git/GitHub · Docker · Terraform · Linux</h4></li>
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">Business Intelligence: Looker Studio · Customer‑facing &amp; Executive Reporting</h4></li>
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">AI &amp; LLMs: Claude · Claude Code · Agents · Prompt Engineering · RAG</h4></li>
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">Agile &amp; Collaboration: Scrum · JIRA · Confluence · Technical Documentation · Sprint Planning · Mentoring</h4></li>
-            <li class="timeline-item"><h4 class="h4 timeline-item-title">Third‑Party Tools: Slack · Zendesk · Salesforce · Gainsight · Harvest · Pylon</h4></li>
-          </ol>
+
+          <div class="skills-groups">
+
+            <!-- Data Engineering -->
+            <div class="skills-group">
+              <p class="skills-group-label">Data Engineering</p>
+              <ul class="skills-icon-grid">
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/python" alt="Python" class="si-icon" width="30" height="30" />
+                  <span>Python</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" class="si-icon" width="30" height="30" />
+                  <span>SQL</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/apacheairflow" alt="Airflow" class="si-icon" width="30" height="30" />
+                  <span>Airflow</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/docker" alt="Docker" class="si-icon" width="30" height="30" />
+                  <span>Docker</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/git" alt="Git" class="si-icon" width="30" height="30" />
+                  <span>Git</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/terraform" alt="Terraform" class="si-icon" width="30" height="30" />
+                  <span>Terraform</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/linux" alt="Linux" class="si-icon" width="30" height="30" />
+                  <span>Linux</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Cloud & Data Platforms -->
+            <div class="skills-group">
+              <p class="skills-group-label">Cloud &amp; Data Platforms</p>
+              <ul class="skills-icon-grid">
+                <li class="skill-item">
+                  <img src="./assets/images/aws.svg" alt="AWS" class="si-icon" width="30" height="30" />
+                  <span>AWS</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/databricks" alt="Databricks" class="si-icon" width="30" height="30" />
+                  <span>Databricks</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/snowflake" alt="Snowflake" class="si-icon" width="30" height="30" />
+                  <span>Snowflake</span>
+                </li>
+              </ul>
+              <p class="skills-subtext"><span class="platform-label">AWS:</span> S3 · Glue · Athena · RDS · ECS · CloudWatch · EventBridge</p>
+              <p class="skills-subtext"><span class="platform-label">Databricks:</span> Delta Lake · Spark SQL · Delta Live Tables · Auto Loader · Unity Catalog · Workflows</p>
+              <p class="skills-subtext"><span class="platform-label">Snowflake:</span> Architecture · Snowpipe · Streams &amp; Tasks · Dynamic Tables · RBAC · Semi-structured Data · Data Sharing</p>
+            </div>
+
+            <!-- AI & LLMs -->
+            <div class="skills-group">
+              <p class="skills-group-label">AI &amp; LLMs</p>
+              <ul class="skills-icon-grid">
+                <li class="skill-item">
+                  <span class="skill-icon-fallback">AI</span>
+                  <span>Claude</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-icon-fallback">CC</span>
+                  <span>Claude Code</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-icon-fallback">RAG</span>
+                  <span>RAG</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-icon-fallback">🤖</span>
+                  <span>Agents</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Collaboration & Tools -->
+            <div class="skills-group">
+              <p class="skills-group-label">Collaboration &amp; Tools</p>
+              <ul class="skills-icon-grid">
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/jira" alt="Jira" class="si-icon" width="30" height="30" />
+                  <span>Jira</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/confluence" alt="Confluence" class="si-icon" width="30" height="30" />
+                  <span>Confluence</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg" alt="Slack" class="si-icon" width="30" height="30" />
+                  <span>Slack</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/salesforce" alt="Salesforce" class="si-icon" width="30" height="30" />
+                  <span>Salesforce</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/zendesk" alt="Zendesk" class="si-icon" width="30" height="30" />
+                  <span>Zendesk</span>
+                </li>
+                <li class="skill-item">
+                  <img src="https://cdn.simpleicons.org/looker" alt="Looker Studio" class="si-icon" width="30" height="30" />
+                  <span>Looker Studio</span>
+                </li>
+                <li class="skill-item">
+                  <img src="./assets/images/Gainsight_Logo_Primary.png" alt="Gainsight" class="si-icon-brand theme-light-only" width="30" height="30" />
+                  <img src="./assets/images/Gainsight_Logo_White.png" alt="Gainsight" class="si-icon-brand theme-dark-only" width="30" height="30" />
+                  <span>Gainsight</span>
+                </li>
+                <li class="skill-item">
+                  <img src="./assets/images/Pylon_idJbaQFpgF_0.png" alt="Pylon" class="si-icon" width="30" height="30" />
+                  <span>Pylon</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
         </section>
       </article>
 
@@ -534,12 +660,23 @@
       });
     });
 
-    // SIDEBAR MORE
-    const sidebarBtn = document.querySelector('[data-sidebar-btn]');
-    const sidebar = document.querySelector('.sidebar');
-    sidebarBtn && sidebarBtn.addEventListener('click', () => {
-      sidebar && sidebar.classList.toggle('active');
-    });
+    // THEME TOGGLE
+    const themeBtn = document.querySelector('[data-theme-toggle]');
+    if (themeBtn) {
+      const root = document.documentElement;
+      function syncThemeBtn() {
+        const current = root.getAttribute('data-theme');
+        themeBtn.textContent = current === 'dark' ? '☀️' : '🌙';
+        themeBtn.setAttribute('aria-label', current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      syncThemeBtn();
+      themeBtn.addEventListener('click', function() {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme-preference', next);
+        syncThemeBtn();
+      });
+    }
 
     // CERTIFICATIONS FILTER BUTTONS
     const filterButtons = document.querySelectorAll('[data-filter-btn]');
